@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from pytz import timezone
 from datetime import datetime, timedelta
 import time
@@ -55,7 +57,7 @@ def fast_clicking_at_time(target_time: str, target_timezone: str = "US/Central")
                     less_than_10 = True
                 sleep_time = 0.5
             else:
-                sleep_time = 0.001
+                sleep_time = 0.0001
 
             time.sleep(sleep_time)
     except KeyboardInterrupt:
