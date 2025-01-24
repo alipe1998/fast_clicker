@@ -1,0 +1,14 @@
+# Build artifacts
+build/
+dist/
+*.spec
+
+# Compressed archives
+*.tar.gz
+*.zip
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.log

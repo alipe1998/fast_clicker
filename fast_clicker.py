@@ -39,7 +39,11 @@ def fast_clicking_at_time(target_time: str, target_timezone: str = "US/Central")
             if remaining_time <= 0:
                 pyautogui.click()
                 formatted_time = f"{current_time.strftime('%H:%M:%S')}.{current_time.microsecond:06d} {current_time.strftime('%Z')}"
-                print(colored(f"Clicked at {formatted_time}.", "blue"))
+                print(colored(f"Clicked at {formatted_time}.", "green"))
+                
+                title = colored("Log Results of Test Here:", "green")
+                url = colored("https://forms.gle/is6uwhx3sQ95ExrZ7", "blue")
+                print(f"{title} {url}")
                 break
 
             if remaining_time > 60:
@@ -49,11 +53,11 @@ def fast_clicking_at_time(target_time: str, target_timezone: str = "US/Central")
                 sleep_time = 5
                 print(colored(f"Time remaining: {remaining_time:.2f} seconds. Sleeping for {sleep_time} seconds.", "yellow"))
             elif 5 < remaining_time <= 30:
-                print(colored(f"T-Minus: {remaining_time:.2f}", "green"))
+                print(colored(f"T-Minus: {remaining_time:.2f}", "yellow"))
                 sleep_time = 1
             elif 2 < remaining_time <= 5:
                 if not less_than_10:
-                    print(colored(f"Less Than 5 Seconds! All Clicking Systems Preparing to Fire!", "green"))
+                    print(colored(f"Less Than 5 Seconds! All Clicking Systems Preparing to Fire!", "yellow"))
                     less_than_10 = True
                 sleep_time = 0.5
             else:
@@ -80,7 +84,6 @@ if __name__ == "__main__":
 
     try:
         fast_clicking_at_time(args.time, args.timezone)
-        print(f"Log Results of Test Here: https://forms.gle/is6uwhx3sQ95ExrZ7")
     except Exception as e:
         print(colored(f"An error occurred: {e}", "red"))
     
