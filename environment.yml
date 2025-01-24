@@ -6,6 +6,7 @@ dependencies:
   - pytz
   - pyautogui
   - termcolor
+  - cx_Freeze
   - pip
   - pip:
       - argparse

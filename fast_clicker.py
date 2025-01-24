@@ -80,5 +80,7 @@ if __name__ == "__main__":
 
     try:
         fast_clicking_at_time(args.time, args.timezone)
+        print(f"Log Results of Test Here: https://forms.gle/is6uwhx3sQ95ExrZ7")
     except Exception as e:
         print(colored(f"An error occurred: {e}", "red"))
+    
